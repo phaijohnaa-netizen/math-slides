@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ថ្នាក់ទី ១០៖ វិសមីការដឺក្រេទី ២ មានមួយអញ្ញាត</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #fbbf24;
+      --tip-bg: rgba(251, 191, 36, 0.12);
+      --tip-border: #fbbf24;
+      --border: #334155;
+    }
+    body.light {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0284c7;
+      --accent-2: #d97706;
+      --tip-bg: #fffbeb;
+      --tip-border: #f59e0b;
+      --border: #cbd5e1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Khmer OS Battambang", "Noto Sans Khmer", system-ui, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 20;
+    }
+    .lesson-title {
+      font-family: "Khmer OS Muol Light", "Khmer OS Battambang", sans-serif;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+    .toolbar { display: flex; gap: 8px; align-items: center; }
+    button {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: transform 0.15s, border-color 0.2s, background 0.2s;
+    }
+    button:hover { border-color: var(--accent); transform: translateY(-1px); }
+    button.active { background: var(--accent); color: #0f172a; font-weight: bold; }
+
+    main {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 48px;
+      overflow-y: auto;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1240px;
+      flex-direction: column;
+      gap: 18px;
+      animation: floatIn 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .slide.active { display: flex; }
+    .slide h1 {
+      font-family: "Khmer OS Muol Light", "Khmer OS Battambang", sans-serif;
+      font-size: 2.05rem;
+      color: var(--accent);
+      line-height: 1.45;
+    }
+    .slide .subtitle { font-size: 1.2rem; color: var(--accent-2); }
+    .slide-body { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
+    .slide-body.has-visual { grid-template-columns: 1.3fr 1fr; }
+    .steps { display: flex; flex-direction: column; gap: 14px; }
+    .step {
+      background: var(--surface);
+      border-left: 5px solid var(--accent);
+      padding: 15px 22px;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      line-height: 1.75;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .step.visible { opacity: 1; transform: translateY(0); }
+
+    .tip-box {
+      background: var(--tip-bg);
+      border: 1.5px solid var(--tip-border);
+      border-left: 6px solid var(--tip-border);
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-size: 1.2rem;
+      line-height: 1.65;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .tip-box.visible { opacity: 1; transform: translateY(0); }
+    .tip-title { font-weight: bold; color: var(--accent-2); margin-bottom: 4px; }
+
+    /* Interactive Visual Card & SVG Animations */
+    .visual-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .visual-card svg { width: 100%; height: auto; }
+    .nl-layer {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nl-layer.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nl-shade .shade-bar, .nl-shade .shade-line {
+      transform-box: fill-box;
+      transform-origin: left center;
+      transform: scaleX(0);
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nl-shade.show .shade-bar, .nl-shade.show .shade-line {
+      transform: scaleX(1);
+    }
+    .root-dot {
+      cursor: pointer;
+      transition: r 0.2s, filter 0.2s;
+    }
+    .root-dot:hover {
+      filter: drop-shadow(0 0 8px #22c55e);
+    }
+    .nl-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      width: 100%;
+    }
+    .nl-btn {
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .katex { font-size: 1.12em !important; }
+    #draw-canvas { position: fixed; inset: 0; z-index: 15; pointer-events: none; }
+    #draw-canvas.drawing { pointer-events: auto; cursor: crosshair; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      z-index: 20;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .progress-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background: var(--accent);
+      transition: width 0.3s;
+      z-index: 25;
+    }
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="lesson-title">ថ្នាក់ទី ១០៖ វិសមីការដឺក្រេទី ២ មានមួយអញ្ញាត</div>
+    <div class="toolbar">
+      <button id="btn-draw" title="គូសលើអេក្រង់ (D)">✏️ គូស (D)</button>
+      <button id="btn-clear" title="លុបគំនូស (C)">🧹 លុប (C)</button>
+      <button id="btn-theme" title="ប្ដូរពណ៌ផ្ទៃ (T)">🌗 ពន្លឺ/ងងឹត</button>
+      <button id="btn-full" title="ពេញអេក្រង់ (F)">⛶ ពេញអេក្រង់</button>
+    </div>
+  </header>
+
+  <main id="slides-container">
+    
+        <section class="slide active">
+          <div>
+            <h1>មេរៀន៖ វិសមីការដឺក្រេទី ២ មានមួយអញ្ញាត</h1>
+            <div class="subtitle">គោលការណ៍គ្រឹះក្នុងការដោះស្រាយ</div>
+          </div>
+          <div class="slide-body">
+            <div class="steps">
+              <div class="step visible">១. រៀបចំវិសមីការឱ្យមានទម្រង់ $ax^2 + bx + c > 0$ (ឬ $<, \leq, \geq$)</div>
+<div class="step">២. រកឫសនៃសមីការ $ax^2 + bx + c = 0$ ដោយគណនា $\Delta = b^2 - 4ac$</div>
+<div class="step">៣. សិក្សាសញ្ញានៃត្រីធា $ax^2 + bx + c$ ផ្អែកលើតម្លៃ $\Delta$ និងមេគុណ $a$</div>
+
+            <div class="tip-box">
+              <div class="tip-title">💡 គន្លឹះដោះស្រាយ</div>
+              <div>តែងតែរៀបចំវិសមីការឱ្យមាន $0$ នៅម្ខាងមុននឹងចាប់ផ្តើមរកឫស!</div>
+            </div>
+            
+            </div>
+            
+          </div>
+        </section>
+        
+
+        <section class="slide">
+          <div>
+            <h1>ច្បាប់សិក្សាសញ្ញានៃត្រីធា</h1>
+            <div class="subtitle">ផ្អែកលើតម្លៃនៃឌីសគ្រីមីណង់ $\Delta$</div>
+          </div>
+          <div class="slide-body">
+            <div class="steps">
+              <div class="step visible">បើ $\Delta > 0$៖ មានឫសពីរ $x_1, x_2$។ សញ្ញា៖ ក្រៅឫសដូច $a$, ក្នុងឫសផ្ទុយពី $a$</div>
+<div class="step">បើ $\Delta = 0$៖ មានឫសឌុប $x = -\frac{b}{2a}$។ សញ្ញា៖ ដូច $a$ គ្រប់តម្លៃ $x \neq -\frac{b}{2a}$</div>
+<div class="step">បើ $\Delta < 0$៖ គ្មានឫស។ សញ្ញា៖ ដូច $a$ គ្រប់តម្លៃ $x$</div>
+
+            <div class="tip-box">
+              <div class="tip-title">💡 គន្លឹះដោះស្រាយ</div>
+              <div>ចាំក្បួន៖ 'ក្រៅដូច ក្នុងផ្ទុយ' (សម្រាប់ករណី $\Delta > 0$)</div>
+            </div>
+            
+            </div>
+            
+          </div>
+        </section>
+        
+
+        <section class="slide">
+          <div>
+            <h1>ឧទាហរណ៍៖ ដោះស្រាយ $x^2 - 5x + 6 \leq 0$</h1>
+            <div class="subtitle">ការអនុវត្តជំហានដោះស្រាយ</div>
+          </div>
+          <div class="slide-body has-visual">
+            <div class="steps">
+              <div class="step visible">ជំហានទី ១៖ រកឫសនៃ $x^2 - 5x + 6 = 0$ គេបាន $x_1 = 2, x_2 = 3$</div>
+<div class="step">ជំហានទី ២៖ ដោយ $a = 1 > 0$ សញ្ញានៅចន្លោះឫសគឺដក ($-$) និងក្រៅឫសគឺបូក ($+$)</div>
+<div class="step">ជំហានទី ៣៖ វិសមីការ $\leq 0$ យកចន្លោះដែលមានសញ្ញាដក ដូចនេះ $x \in [2, 3]$</div>
+
+            <div class="tip-box">
+              <div class="tip-title">💡 គន្លឹះដោះស្រាយ</div>
+              <div>សញ្ញា $\leq$ ឬ $\geq$ ប្រើរង្វង់តាន់ (●) និងតង្កៀបការ៉េ $[ ]$ ព្រោះវាបញ្ចូលឫសទាំងពីរ!</div>
+            </div>
+            
+            </div>
+            
+            <div class="visual-card">
+              <svg viewBox="0 0 460 190" xmlns="http://www.w3.org/2000/svg" class="interactive-nl">
+<text x="230" y="28" text-anchor="middle" fill="#94a3b8" font-size="15">ដែនចម្លើយ $x \in [2, 3]$</text>
+<line x1="25" y1="115" x2="435" y2="115" stroke="#94a3b8" stroke-width="3" />
+<polygon points="435,115 423,109 423,121" fill="#94a3b8" />
+<text x="20" y="143" fill="#94a3b8" font-size="14">-∞</text>
+<text x="422" y="143" fill="#94a3b8" font-size="14">+∞</text>
+<g class="nl-layer nl-shade">
+<rect class="shade-bar" x="145" y="101" width="170" height="28" fill="#22c55e" fill-opacity="0.28" rx="4" />
+<line class="shade-line" x1="145" y1="115" x2="315" y2="115" stroke="#22c55e" stroke-width="6" />
+</g>
+<g class="nl-layer nl-signs">
+<text class="sign-item" x="85" y="81" text-anchor="middle" fill="#38bdf8" font-size="24" font-weight="bold">+</text>
+<text class="sign-item" x="230" y="81" text-anchor="middle" fill="#f87171" font-size="24" font-weight="bold">-</text>
+<text class="sign-item" x="375" y="81" text-anchor="middle" fill="#38bdf8" font-size="24" font-weight="bold">+</text>
+</g>
+<g class="nl-layer nl-roots show">
+<circle class="root-dot" cx="145" cy="115" r="7.5" fill="#22c55e" stroke="#22c55e" stroke-width="3" />
+<text x="145" y="149" text-anchor="middle" fill="#fbbf24" font-size="18" font-weight="bold">2</text>
+<circle class="root-dot" cx="315" cy="115" r="7.5" fill="#22c55e" stroke="#22c55e" stroke-width="3" />
+<text x="315" y="149" text-anchor="middle" fill="#fbbf24" font-size="18" font-weight="bold">3</text>
+</g>
+</svg>
+              <div class="nl-controls">
+                <button class="nl-btn" onclick="setVisualStage(this, 1)">១. ឬស</button>
+                <button class="nl-btn" onclick="setVisualStage(this, 2)">២. សញ្ញា</button>
+                <button class="nl-btn" onclick="setVisualStage(this, 3)">៣. ដែនចម្លើយ</button>
+                <button class="nl-btn" onclick="setVisualStage(this, 0)">🔄 លេងចលនា</button>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+
+        <section class="slide">
+          <div>
+            <h1>លំហាត់អនុវត្តសម្រាប់សិស្ស</h1>
+            <div class="subtitle">សាកល្បងដោះស្រាយដោយខ្លួនឯង</div>
+          </div>
+          <div class="slide-body">
+            <div class="steps">
+              <div class="step visible">១. $x^2 - 4x + 3 \leq 0$</div>
+<div class="step">២. $x^2 + 2x - 8 > 0$</div>
+<div class="step">៣. $-x^2 + 5x - 6 \geq 0$</div>
+<div class="step">៤. $2x^2 - 7x + 3 < 0$</div>
+<div class="step">៥. $x^2 - 6x + 9 \leq 0$</div>
+<div class="step">៦. $x^2 - 4x + 5 > 0$</div>
+
+            <div class="tip-box">
+              <div class="tip-title">💡 គន្លឹះដោះស្រាយ</div>
+              <div>កុំភ្លេចគូរតារាងសញ្ញាសម្រាប់រាល់លំហាត់ ដើម្បីងាយស្រួលរកចម្លើយ!</div>
+            </div>
+            
+            </div>
+            
+          </div>
+        </section>
+        
+  </main>
+
+  <canvas id="draw-canvas"></canvas>
+
+  <footer>
+    <div id="slide-counter">ស្លាយ 1 / 1</div>
+    <div>ប្រើ <b>Space / →</b> បង្ហាញជំហាន និងចលនារូបភាព | <b>←</b> ត្រឡប់ក្រោយ | <b>D</b> គូសលើអេក្រង់</div>
+    <div class="toolbar">
+      <button id="btn-prev">⬅ មុន</button>
+      <button id="btn-next">បន្ទាប់ ➡</button>
+    </div>
+  </footer>
+  <div class="progress-bar" id="progress"></div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let currentSlide = 0;
+
+    function syncVisualWithSteps(slideEl) {
+      const visibleSteps = slideEl.querySelectorAll('.step.visible').length;
+      const rootsLayer = slideEl.querySelector('.nl-roots');
+      const signsLayer = slideEl.querySelector('.nl-signs');
+      const shadeLayer = slideEl.querySelector('.nl-shade');
+      if (rootsLayer) rootsLayer.classList.toggle('show', visibleSteps >= 1);
+      if (signsLayer) signsLayer.classList.toggle('show', visibleSteps >= 2);
+      if (shadeLayer) shadeLayer.classList.toggle('show', visibleSteps >= 3);
+    }
+
+    function setVisualStage(btn, stage) {
+      const card = btn.closest('.visual-card');
+      const roots = card.querySelector('.nl-roots');
+      const signs = card.querySelector('.nl-signs');
+      const shade = card.querySelector('.nl-shade');
+      if (stage === 0) {
+        // Replay animation
+        [roots, signs, shade].forEach(el => el && el.classList.remove('show'));
+        setTimeout(() => roots && roots.classList.add('show'), 150);
+        setTimeout(() => signs && signs.classList.add('show'), 750);
+        setTimeout(() => shade && shade.classList.add('show'), 1400);
+      } else {
+        if (roots) roots.classList.toggle('show', stage >= 1);
+        if (signs) signs.classList.toggle('show', stage >= 2);
+        if (shade) shade.classList.toggle('show', stage >= 3);
+      }
+    }
+
+    function updateUI() {
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === currentSlide));
+      document.getElementById('slide-counter').textContent = `ស្លាយ ${currentSlide + 1} / ${slides.length}`;
+      document.getElementById('progress').style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+      syncVisualWithSteps(slides[currentSlide]);
+      clearCanvas();
+    }
+
+    function nextAction() {
+      const hiddenItems = slides[currentSlide].querySelectorAll('.step:not(.visible), .tip-box:not(.visible)');
+      if (hiddenItems.length > 0) {
+        hiddenItems[0].classList.add('visible');
+        syncVisualWithSteps(slides[currentSlide]);
+      } else if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateUI();
+      }
+    }
+
+    function prevAction() {
+      const visibleItems = slides[currentSlide].querySelectorAll('.step.visible, .tip-box.visible');
+      if (visibleItems.length > 1) {
+        visibleItems[visibleItems.length - 1].classList.remove('visible');
+        syncVisualWithSteps(slides[currentSlide]);
+      } else if (currentSlide > 0) {
+        currentSlide--;
+        updateUI();
+      }
+    }
+
+    document.getElementById('btn-next').onclick = nextAction;
+    document.getElementById('btn-prev').onclick = prevAction;
+    document.getElementById('btn-theme').onclick = () => document.body.classList.toggle('light');
+    document.getElementById('btn-full').onclick = () => {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    };
+
+    const canvas = document.getElementById('draw-canvas');
+    const ctx = canvas.getContext('2d');
+    const btnDraw = document.getElementById('btn-draw');
+    let isDrawingMode = false, painting = false;
+
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function clearCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+    document.getElementById('btn-clear').onclick = clearCanvas;
+
+    btnDraw.onclick = () => {
+      isDrawingMode = !isDrawingMode;
+      canvas.classList.toggle('drawing', isDrawingMode);
+      btnDraw.classList.toggle('active', isDrawingMode);
+    };
+
+    canvas.addEventListener('mousedown', (e) => {
+      if (!isDrawingMode) return;
+      painting = true;
+      ctx.beginPath();
+      ctx.moveTo(e.clientX, e.clientY);
+    });
+    canvas.addEventListener('mousemove', (e) => {
+      if (!painting) return;
+      ctx.lineWidth = 4;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#fbbf24';
+      ctx.lineTo(e.clientX, e.clientY);
+      ctx.stroke();
+    });
+    window.addEventListener('mouseup', () => { painting = false; });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); nextAction(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); prevAction(); }
+      else if (e.key.toLowerCase() === 'd') btnDraw.click();
+      else if (e.key.toLowerCase() === 'c') clearCanvas();
+      else if (e.key.toLowerCase() === 't') document.body.classList.toggle('light');
+      else if (e.key.toLowerCase() === 'f') document.getElementById('btn-full').click();
+    });
+
+    updateUI();
+  </script>
+</body>
+</html>
