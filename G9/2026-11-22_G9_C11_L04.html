@@ -417,6 +417,11 @@
       .visual-svg-anim { animation: none !important; }
       .presenter-notes { display: block !important; background: #f8fafc !important; color: #0f172a !important; }
     }
+    /* phai-fontface */
+    @font-face { font-family: "Khmer OS Muol Light"; src: local("Khmer OS Muol Light"), url("../fonts/KhmerOSMuolLight.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Khmer OS Battambang"; src: local("Khmer OS Battambang"), url("../fonts/KhmerOSBattambang.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    .tip-title, .trap-label { font-family: "Khmer OS Muol Light", "Moul", serif !important; font-weight: normal !important; }
+    .trap-label { color: #d97706; }
     .solution-label {
       font-family: 'Khmer OS Muol Light', 'Moul', serif;
       font-size: 1.25em;
@@ -560,8 +565,8 @@
             </div>
             
             <div class="visual-card paper">
-              <div class="visual-svg-anim" style="width:100%;"><svg viewBox='0 0 420 260'><rect x='50' y='50' width='320' height='150' rx='10' fill='#f0f9ff' stroke='#38bdf8' stroke-width='2'/><foreignObject x="0" y="61" width="420" height="44" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:20px;color:#0f172a;"><div>មាន់ + គោ $= 20$ ក្បាល</div></div></foreignObject><foreignObject x="0" y="101" width="420" height="44" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:20px;color:#0f172a;"><div>ជើងមាន់ + ជើងគោ $= 60$ ជើង</div></div></foreignObject><text x='210' y='170' font-size='22' text-anchor='middle' fill='#e11d48' font-weight='bold'>តើមាន់ប៉ុន្មាន? គោប៉ុន្មាន?</text></svg></div>
-              <div class="visual-caption">រូបភាពតំណាងបញ្ហា៖ ការស្វែងរកចំនួនសត្វ</div>
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='មាន់ និងគោ ២០ ក្បាល ៦០ ជើង'><g class='dg-pop' style='--d:0s'><circle cx='95' cy='93' r='22' fill='#fde68a' stroke='#d97706' stroke-width='3'/><circle cx='113' cy='71' r='11' fill='#fde68a' stroke='#d97706' stroke-width='3'/><polygon points='123,69 133,73 123,76' fill='#db2777'/><circle cx='116' cy='68' r='2' fill='#0f172a'/><line x1='89' y1='115' x2='89' y2='135' stroke='#0f172a' stroke-width='3' stroke-linecap='round'/><line x1='103' y1='115' x2='103' y2='135' stroke='#0f172a' stroke-width='3' stroke-linecap='round'/><text x='95' y='168' text-anchor='middle' font-size='19' fill='#d97706' font-weight='bold'>មាន់ x</text><text x='95' y='190' text-anchor='middle' font-size='16' fill='#475569'>២ ជើង</text></g><g class='dg-pop' style='--d:0.5s'><rect x='266' y='71' width='68' height='38' rx='8' fill='#e2e8f0' stroke='#0f172a' stroke-width='3'/><rect x='326' y='59' width='28' height='26' rx='6' fill='#e2e8f0' stroke='#0f172a' stroke-width='3'/><circle cx='345' cy='69' r='2.5' fill='#0f172a'/><line x1='274' y1='109' x2='274' y2='135' stroke='#0f172a' stroke-width='3' stroke-linecap='round'/><line x1='290' y1='109' x2='290' y2='135' stroke='#0f172a' stroke-width='3' stroke-linecap='round'/><line x1='312' y1='109' x2='312' y2='135' stroke='#0f172a' stroke-width='3' stroke-linecap='round'/><line x1='328' y1='109' x2='328' y2='135' stroke='#0f172a' stroke-width='3' stroke-linecap='round'/><text x='300' y='168' text-anchor='middle' font-size='19' fill='#0284c7' font-weight='bold'>គោ y</text><text x='300' y='190' text-anchor='middle' font-size='16' fill='#475569'>៤ ជើង</text></g><g class='dg-pop' style='--d:0.4s'><text x='197' y='100' text-anchor='middle' font-size='28' fill='#475569' font-weight='bold'>+</text></g><g class='dg-pop' style='--d:1.1s'><text x='210' y='225' text-anchor='middle' font-size='17' fill='#0f172a' font-weight='bold'>x + y = 20 ក្បាល</text><text x='210' y='249' text-anchor='middle' font-size='17' fill='#0f172a' font-weight='bold'>2x + 4y = 60 ជើង</text></g></svg></div>
+              <div class="visual-caption">មាន់ និងគោ៖ ២០ ក្បាល ៦០ ជើង</div>
             </div>
             
           </div>
@@ -595,8 +600,8 @@
             </div>
             
             <div class="visual-card paper">
-              <div class="visual-svg-anim" style="width:100%;"><svg viewBox='0 0 420 260'><rect x='60' y='40' width='300' height='160' rx='10' fill='#fef3c7' stroke='#fbbf24' stroke-width='2'/><text x='210' y='80' font-size='20' text-anchor='middle' fill='#78350f'>ជំហានដោះស្រាយ</text><path d='M100 110 L320 110' stroke='#78350f' stroke-width='2'/><text x='210' y='140' font-size='18' text-anchor='middle' fill='#000'>1. តាងអញ្ញាត</text><text x='210' y='170' font-size='18' text-anchor='middle' fill='#000'>2. បង្កើតសមីការ</text><text x='210' y='200' font-size='18' text-anchor='middle' fill='#000'>3. ដោះស្រាយ & ផ្ទៀងផ្ទាត់</text></svg></div>
-              <div class="visual-caption">ដ្យាក្រាមជំហានដោះស្រាយ</div>
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ចម្លើយនៃប្រព័ន្ធសមីការ ជាចំណុចប្រសព្វនៃបន្ទាត់ពីរ'><g class='dg-pop' style='--d:0s'><line x1='48' y1='215' x2='48' y2='28' stroke='#0f172a' stroke-width='2.5' stroke-linecap='round'/><line x1='48' y1='215' x2='250' y2='215' stroke='#0f172a' stroke-width='2.5' stroke-linecap='round'/><text x='38' y='36' text-anchor='middle' font-size='16' fill='#475569' font-style='italic' font-family="'Times New Roman',serif">y</text><text x='246' y='235' text-anchor='middle' font-size='16' fill='#475569' font-style='italic' font-family="'Times New Roman',serif">x</text></g><g class='dg-pop' style='--d:0.5s'><line x1='60' y1='62' x2='240' y2='200' stroke='#0284c7' stroke-width='3.5' stroke-linecap='round'/><text x='68' y='56' text-anchor='start' font-size='16' fill='#0284c7' font-weight='bold'>(1)</text></g><g class='dg-pop' style='--d:0.9s'><line x1='60' y1='190' x2='240' y2='72' stroke='#db2777' stroke-width='3.5' stroke-linecap='round'/><text x='68' y='210' text-anchor='start' font-size='16' fill='#db2777' font-weight='bold'>(2)</text></g><g class='dg-pop' style='--d:1.4s'><line x1='150' y1='130' x2='150' y2='215' stroke='#475569' stroke-width='1.8' stroke-linecap='round' stroke-dasharray='4 4'/><line x1='150' y1='130' x2='48' y2='130' stroke='#475569' stroke-width='1.8' stroke-linecap='round' stroke-dasharray='4 4'/><circle cx='150' cy='130' r='8' fill='#fff' stroke='#d97706' stroke-width='3.5'/><text x='150' y='233' text-anchor='middle' font-size='15' fill='#d97706' font-weight='bold' font-style='italic' font-family="'Times New Roman',serif">x₀</text><text x='34' y='135' text-anchor='middle' font-size='15' fill='#d97706' font-weight='bold' font-style='italic' font-family="'Times New Roman',serif">y₀</text></g><g class='dg-pop' style='--d:1.6s'><text x='258' y='100' text-anchor='start' font-size='15' fill='#0284c7' font-weight='bold'>(1) a₁x + b₁y = c₁</text><text x='258' y='136' text-anchor='start' font-size='15' fill='#db2777' font-weight='bold'>(2) a₂x + b₂y = c₂</text><text x='258' y='172' text-anchor='start' font-size='17' fill='#d97706' font-weight='bold'>ចំណុចប្រសព្វ</text><text x='258' y='208' text-anchor='start' font-size='16' fill='#d97706' font-weight='bold'>(x₀ , y₀) = ចម្លើយ</text></g></svg></div>
+              <div class="visual-caption">ចម្លើយប្រព័ន្ធសមីការ = ចំណុចប្រសព្វនៃបន្ទាត់ពីរ</div>
             </div>
             
           </div>
@@ -664,8 +669,8 @@
             </div>
             
             <div class="visual-card paper">
-              <div class="visual-svg-anim" style="width:100%;"><svg viewBox='0 0 420 260'><line x1='50' y1='150' x2='370' y2='150' stroke='#333' stroke-width='2'/><foreignObject x="0" y="106.8" width="420" height="35.2" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:16px;color:var(--text);"><div>អាយុបច្ចុប្បន្ន ($x, y$)</div></div></foreignObject><text x='50' y='180' text-anchor='middle' font-size='14'>អតីតកាល</text><foreignObject x="-160" y="179.7" width="420" height="30.8" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:14px;color:var(--text);"><div>($x-5, y-5$)</div></div></foreignObject><path d='M100 150 L100 120' stroke='#f472b6' stroke-width='3'/><foreignObject x="-110" y="86.8" width="420" height="35.2" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:16px;color:#f472b6;"><div>$x-5 = 3(y-5)$</div></div></foreignObject></svg></div>
-              <div class="visual-caption">ដ្យាក្រាមបង្ហាញទំនាក់ទំនងអាយុរវាងអតីតកាល និងបច្ចុប្បន្ន</div>
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='អាយុឪពុក ៣៥ កូន ១៥ និងអាយុ ៥ ឆ្នាំមុន'><g class='dg-pop' style='--d:0.3s'><rect x='70' y='62' width='196.0' height='24' rx='4' fill='#0284c7' fill-opacity='.85'/><text x='274' y='80' text-anchor='start' font-size='17' fill='#0284c7' font-weight='bold'>35</text><text x='64' y='80' text-anchor='end' font-size='14' fill='#475569'>ឪពុក</text><text x='10' y='52' text-anchor='start' font-size='15' fill='#0f172a' font-weight='bold'>ឥឡូវ</text></g><g class='dg-pop' style='--d:0.3s'><rect x='70' y='92' width='84.0' height='24' rx='4' fill='#db2777' fill-opacity='.85'/><text x='162' y='110' text-anchor='start' font-size='17' fill='#db2777' font-weight='bold'>15</text><text x='64' y='110' text-anchor='end' font-size='14' fill='#475569'>កូន</text></g><g class='dg-pop' style='--d:0.9s'><rect x='70' y='150' width='168.0' height='24' rx='4' fill='#0284c7' fill-opacity='.85'/><text x='246' y='168' text-anchor='start' font-size='17' fill='#0284c7' font-weight='bold'>30</text><text x='64' y='168' text-anchor='end' font-size='14' fill='#475569'>ឪពុក</text><text x='10' y='140' text-anchor='start' font-size='15' fill='#0f172a' font-weight='bold'>៥ ឆ្នាំមុន</text></g><g class='dg-pop' style='--d:0.9s'><rect x='70' y='180' width='56.0' height='24' rx='4' fill='#db2777' fill-opacity='.85'/><text x='134' y='198' text-anchor='start' font-size='17' fill='#db2777' font-weight='bold'>10</text><text x='64' y='198' text-anchor='end' font-size='14' fill='#475569'>កូន</text></g><g class='dg-pop' style='--d:0.6s'><text x='306' y='98' text-anchor='start' font-size='16' fill='#16a34a' font-weight='bold'>ផលបូក = 50 ✓</text></g><g class='dg-pop' style='--d:1.2s'><text x='268' y='190' text-anchor='start' font-size='16' fill='#16a34a' font-weight='bold'>30 = 3 × 10 ✓</text></g><g class='dg-pop' style='--d:0.6s'><line x1='70' y1='128' x2='300' y2='128' stroke='#cbd5e1' stroke-width='1.5' stroke-linecap='round' stroke-dasharray='5 4'/></g></svg></div>
+              <div class="visual-caption">អាយុឪពុក ៣៥ កូន ១៥ (និង ៥ ឆ្នាំមុន ៣០ ជា ៣ ដងនៃ ១០)</div>
             </div>
             
           </div>
@@ -698,8 +703,8 @@
             </div>
             
             <div class="visual-card paper">
-              <div class="visual-svg-anim" style="width:100%;"><svg viewBox='0 0 420 260'><circle cx='210' cy='100' r='60' fill='#fbbf24'/><text x='210' y='110' text-anchor='middle' font-size='40' fill='white'>!</text><text x='210' y='200' text-anchor='middle' font-size='20' fill='#333'>កុំភ្លេចវង់ក្រចក!</text></svg></div>
-              <div class="visual-caption">សញ្ញាព្រមាន៖ ត្រូវប្រយ័ត្នចំពោះការគុណកត្តា</div>
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ទ្រឹស្ដីបទបំបែកវង់ក្រចក 3(y − 5) = 3y − 15'><g class='dg-pop' style='--d:0.1s'><rect x='40' y='78' width='150' height='30' fill='#bae6fd' stroke='#fff' stroke-width='1.5'/><rect x='190' y='78' width='50' height='30' fill='#fbcfe8' stroke='#fff' stroke-width='1.5'/></g><g class='dg-pop' style='--d:0.2s'><rect x='40' y='108' width='150' height='30' fill='#bae6fd' stroke='#fff' stroke-width='1.5'/><rect x='190' y='108' width='50' height='30' fill='#fbcfe8' stroke='#fff' stroke-width='1.5'/></g><g class='dg-pop' style='--d:0.30000000000000004s'><rect x='40' y='138' width='150' height='30' fill='#bae6fd' stroke='#fff' stroke-width='1.5'/><rect x='190' y='138' width='50' height='30' fill='#fbcfe8' stroke='#fff' stroke-width='1.5'/></g><rect x='40' y='78' width='200' height='90' fill='none' stroke='#0f172a' stroke-width='3' pathLength='1' class='dg-draw' style='--d:.1s'/><g class='dg-pop' style='--d:0.7s'><text x='115' y='66' text-anchor='middle' font-size='17' fill='#0284c7' font-weight='bold'>y − 5</text><text x='215' y='66' text-anchor='middle' font-size='17' fill='#db2777' font-weight='bold'>5</text><text x='28' y='130' text-anchor='end' font-size='18' fill='#0f172a' font-weight='bold'>3</text><text x='115' y='130' text-anchor='middle' font-size='18' fill='#0f172a' font-weight='bold'>3(y − 5)</text><text x='215' y='130' text-anchor='middle' font-size='16' fill='#db2777' font-weight='bold'>15</text></g><g class='dg-pop' style='--d:1.2s'><text x='140' y='202' text-anchor='middle' font-size='18' fill='#16a34a' font-weight='bold'>3(y − 5) = 3y − 15 ✓</text><text x='140' y='230' text-anchor='middle' font-size='17' fill='#db2777' font-weight='bold'>3y − 5 ✗ (ភ្លេចគុណ 5)</text></g></svg></div>
+              <div class="visual-caption">3(y − 5) = 3y − 15 មិនមែន 3y − 5</div>
             </div>
             
           </div>
@@ -982,6 +987,19 @@
       var span = document.createElement('span');
       span.innerHTML = node.nodeValue.replace(/ដំណោះស្រាយ៖/g, '<span class="solution-label">ដំណោះស្រាយ៖</span>');
       node.parentNode.replaceChild(span, node);
+    });
+
+    // 1b. ប្ដូរស្ទីល «អន្ទាក់ទី ...៖»
+    var w2 = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var tn = [];
+    while (w2.nextNode()) {
+      var pe = w2.currentNode.parentNode;
+      if (pe && !/^(SCRIPT|STYLE)$/.test(pe.tagName) && !pe.classList.contains('trap-label') && /អន្ទាក់ទី\s*[០-៩0-9]+\s*៖/.test(w2.currentNode.nodeValue)) tn.push(w2.currentNode);
+    }
+    tn.forEach(function(node){
+      var sp = document.createElement('span');
+      sp.innerHTML = node.nodeValue.replace(/អន្ទាក់ទី\s*[០-៩0-9]+\s*៖/g, '<span class="trap-label">$&</span>');
+      node.parentNode.replaceChild(sp, node);
     });
 
     // 2. ប្ដូរស្ទីល «បង្រៀនដោយ៖ លោកគ្រូ ផៃ ចន» ឱ្យច្បាស់ និងធំស្អាត

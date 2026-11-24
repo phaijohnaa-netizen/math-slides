@@ -417,6 +417,11 @@
       .visual-svg-anim { animation: none !important; }
       .presenter-notes { display: block !important; background: #f8fafc !important; color: #0f172a !important; }
     }
+    /* phai-fontface */
+    @font-face { font-family: "Khmer OS Muol Light"; src: local("Khmer OS Muol Light"), url("../fonts/KhmerOSMuolLight.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Khmer OS Battambang"; src: local("Khmer OS Battambang"), url("../fonts/KhmerOSBattambang.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    .tip-title, .trap-label { font-family: "Khmer OS Muol Light", "Moul", serif !important; font-weight: normal !important; }
+    .trap-label { color: #d97706; }
     .solution-label {
       font-family: 'Khmer OS Muol Light', 'Moul', serif;
       font-size: 1.25em;
@@ -545,7 +550,7 @@
             <h1>🎯 តើផលបូកមុំក្នុងពហុកោណរកដោយរបៀបណា?</h1>
             <div class="subtitle">ការស្វែងយល់ពីទំនាក់ទំនងរវាងចំនួនជ្រុង និងមុំ</div>
           </div>
-          <div class="slide-body">
+          <div class="slide-body has-visual">
             <div class="steps">
               <div class="step visible">សិស្សធ្លាប់ស្គាល់ផលបូកមុំត្រីកោណ ($180^\circ$) និងចតុកោណ ($360^\circ$)។</div>
 <div class="step">ចុះបើពហុកោណមាន ៥, ៦ ឬ ១០ ជ្រុងវិញ? តើផលបូកមុំក្នុងរបស់វាស្មើនឹងប៉ុន្មាន?</div>
@@ -558,8 +563,12 @@
             
             </div>
             
-          </div>
           
+            <div class="visual-card paper">
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ផលបូកមុំក្នុងនៃពហុកោណ'><polygon points='55,58 91.4,121 18.6,121' fill='none' stroke='#0284c7' stroke-width='3' stroke-linejoin='round' pathLength='1' class='dg-draw' style='--d:0.0s'/><g class='dg-pop' style='--d:0.4s'><text x='55' y='175' text-anchor='middle' font-size='17' fill='#475569'>៣ ជ្រុង</text><text x='55' y='210' text-anchor='middle' font-size='24' fill='#0f172a' font-weight='bold'>180°</text></g><polygon points='187.7,70.3 187.7,129.7 128.3,129.7 128.3,70.3' fill='none' stroke='#0284c7' stroke-width='3' stroke-linejoin='round' pathLength='1' class='dg-draw' style='--d:0.15s'/><g class='dg-pop' style='--d:0.7s'><text x='158' y='175' text-anchor='middle' font-size='17' fill='#475569'>៤ ជ្រុង</text><text x='158' y='210' text-anchor='middle' font-size='24' fill='#0f172a' font-weight='bold'>360°</text></g><polygon points='261,58 300.9,87 285.7,134 236.3,134 221.1,87' fill='none' stroke='#0284c7' stroke-width='3' stroke-linejoin='round' pathLength='1' class='dg-draw' style='--d:0.3s'/><g class='dg-pop' style='--d:1.0s'><text x='261' y='175' text-anchor='middle' font-size='17' fill='#475569'>៥ ជ្រុង</text><text x='261' y='210' text-anchor='middle' font-size='24' fill='#db2777' font-weight='bold'>?</text></g><polygon points='364,58 400.4,79 400.4,121 364,142 327.6,121 327.6,79' fill='none' stroke='#0284c7' stroke-width='3' stroke-linejoin='round' pathLength='1' class='dg-draw' style='--d:0.44999999999999996s'/><g class='dg-pop' style='--d:1.2999999999999998s'><text x='364' y='175' text-anchor='middle' font-size='17' fill='#475569'>៦ ជ្រុង</text><text x='364' y='210' text-anchor='middle' font-size='24' fill='#db2777' font-weight='bold'>?</text></g><g class='dg-pop' style='--d:1.6s'><text x='210' y='248' text-anchor='middle' font-size='16' fill='#475569'>ផលបូកមុំក្នុង = ?</text></g></svg></div>
+              <div class="visual-caption">ផលបូកមុំក្នុង៖ ត្រីកោណ 180° · ចតុកោណ 360° · …?</div>
+            </div>
+          </div>
             <div class="presenter-notes">
               <div class="notes-title">📝 កំណត់ត្រាពន្យល់លម្អិត (សម្រាប់គ្រូ និងសិស្សស្វ័យសិក្សា)</div>
               <div>ពហុកោណគឺជាតួធរណីមាត្រដែលមានជ្រុងច្រើន។ ការយល់ដឹងពីផលបូកមុំក្នុងជួយឱ្យយើងដឹងពីលក្ខណៈនៃរូបរាងនីមួយៗ។ សិស្សគួរចាប់ផ្ដើមសង្កេតមើលថា តើត្រីកោណប៉ុន្មានដែលបង្កើតបានពីពហុកោណមួយ។</div>
@@ -573,7 +582,7 @@
             <h1>📐 រូបមន្តគោលសម្រាប់ពហុកោណ</h1>
             <div class="subtitle">និយមន័យ និងរូបមន្តសម្រាប់គណនា</div>
           </div>
-          <div class="slide-body">
+          <div class="slide-body has-visual">
             <div class="steps">
               <div class="step visible">ផលបូកមុំក្នុងនៃពហុកោណ $n$ ជ្រុង៖ $$S = (n-2) \times 180^\circ$$</div>
 <div class="step">មុំក្នុងមួយនៃពហុកោណនិយ័ត៖ $$\alpha = \dfrac{(n-2) \times 180^\circ}{n}$$</div>
@@ -586,8 +595,12 @@
             
             </div>
             
-          </div>
           
+            <div class="visual-card paper">
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ពហុកោណបំបែកជាត្រីកោណ'><g class='dg-pop' style='--d:0s'><polygon points='125,40 202.9,85 202.9,175' fill='#bae6fd' fill-opacity='.8'/><polygon points='125,40 202.9,175 125,220' fill='#fde68a' fill-opacity='.8'/><polygon points='125,40 125,220 47.1,175' fill='#fbcfe8' fill-opacity='.8'/><polygon points='125,40 47.1,175 47.1,85' fill='#bbf7d0' fill-opacity='.8'/></g><polygon points='125,40 202.9,85 202.9,175 125,220 47.1,175 47.1,85' fill='none' stroke='#0f172a' stroke-width='3' stroke-linejoin='round' pathLength='1' class='dg-draw' style='--d:0.1s'/><g class='dg-pop' style='--d:0.7s'><line x1='125' y1='40' x2='202.9' y2='175' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='40' x2='125' y2='220' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='40' x2='47.1' y2='175' stroke='#d97706' stroke-width='2' stroke-linecap='round'/></g><g class='dg-pop' style='--d:0.3s'><text dy='6' x='125' y='25' text-anchor='middle' font-size='18' fill='#0f172a' font-style='italic' font-family="'Times New Roman',serif">A</text><text dy='6' x='215.9' y='77.5' text-anchor='middle' font-size='18' fill='#0f172a' font-style='italic' font-family="'Times New Roman',serif">B</text><text dy='6' x='215.9' y='182.5' text-anchor='middle' font-size='18' fill='#0f172a' font-style='italic' font-family="'Times New Roman',serif">C</text><text dy='6' x='125' y='235' text-anchor='middle' font-size='18' fill='#0f172a' font-style='italic' font-family="'Times New Roman',serif">D</text><text dy='6' x='34.1' y='182.5' text-anchor='middle' font-size='18' fill='#0f172a' font-style='italic' font-family="'Times New Roman',serif">E</text><text dy='6' x='34.1' y='77.5' text-anchor='middle' font-size='18' fill='#0f172a' font-style='italic' font-family="'Times New Roman',serif">F</text></g><g class='dg-pop' style='--d:1.0s'><text x='240' y='100' text-anchor='start' font-size='20' fill='#0f172a' font-weight='bold'>n = 6</text><text x='240' y='134' text-anchor='start' font-size='17' fill='#475569'>n − 2 = 4 ត្រីកោណ</text><text x='240' y='168' text-anchor='start' font-size='18' fill='#0f172a'>S = 4 × 180°</text><text x='240' y='202' text-anchor='start' font-size='22' fill='#d97706' font-weight='bold'>= 720°</text></g></svg></div>
+              <div class="visual-caption">បំបែកពហុកោណ n ជ្រុងជា (n − 2) ត្រីកោណ</div>
+            </div>
+          </div>
             <div class="presenter-notes">
               <div class="notes-title">📝 កំណត់ត្រាពន្យល់លម្អិត (សម្រាប់គ្រូ និងសិស្សស្វ័យសិក្សា)</div>
               <div>រូបមន្តទាំងនេះអនុវត្តបានសម្រាប់ពហុកោណប៉ោង។ ពហុកោណនិយ័តគឺជាពហុកោណដែលមានជ្រុងស្មើគ្នា និងមុំស្មើគ្នា។ សូមកត់ត្រារូបមន្តទាំងនេះទុកសម្រាប់អនុវត្តលំហាត់។</div>
@@ -601,7 +614,7 @@
             <h1>🟢 ឧទាហរណ៍៖ រកមុំក្នុងនៃពហុកោណនិយ័ត</h1>
             <div class="subtitle">អនុវត្តរូបមន្តលើពហុកោណ ៨ ជ្រុង</div>
           </div>
-          <div class="slide-body">
+          <div class="slide-body has-visual">
             <div class="steps">
               <div class="step visible">សំណួរ៖ រកមុំក្នុងមួយនៃពហុកោណនិយ័តដែលមាន ៨ ជ្រុង។</div>
 <div class="step">ដំណោះស្រាយ៖ ប្រើរូបមន្ត $$\alpha = \dfrac{(n-2) \times 180^\circ}{n}$$</div>
@@ -614,8 +627,12 @@
             
             </div>
             
-          </div>
           
+            <div class="visual-card paper">
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ពហុកោណនិយ័តប្រាំបីជ្រុង មុំក្នុង ១៣៥ ដឺក្រេ'><g class='dg-pop' style='--d:0s'><polygon points='160.2,45 210,94.8 210,165.2 160.2,215 89.8,215 40,165.2 40,94.8 89.8,45' fill='#e0f2fe'/></g><polygon points='160.2,45 210,94.8 210,165.2 160.2,215 89.8,215 40,165.2 40,94.8 89.8,45' fill='none' stroke='#0f172a' stroke-width='3' stroke-linejoin='round' pathLength='1' class='dg-draw' style='--d:0.1s'/><g class='dg-pop' style='--d:0.5s'><line x1='189.3' y1='65.7' x2='180.9' y2='74.1' stroke='#0284c7' stroke-width='2.5' stroke-linecap='round'/><line x1='216' y1='130' x2='204' y2='130' stroke='#0284c7' stroke-width='2.5' stroke-linecap='round'/><line x1='189.3' y1='194.3' x2='180.9' y2='185.9' stroke='#0284c7' stroke-width='2.5' stroke-linecap='round'/><line x1='125' y1='221' x2='125' y2='209' stroke='#0284c7' stroke-width='2.5' stroke-linecap='round'/><line x1='60.7' y1='194.3' x2='69.1' y2='185.9' stroke='#0284c7' stroke-width='2.5' stroke-linecap='round'/><line x1='34' y1='130' x2='46' y2='130' stroke='#0284c7' stroke-width='2.5' stroke-linecap='round'/><line x1='60.7' y1='65.7' x2='69.1' y2='74.1' stroke='#0284c7' stroke-width='2.5' stroke-linecap='round'/><line x1='125' y1='39' x2='125' y2='51' stroke='#0284c7' stroke-width='2.5' stroke-linecap='round'/></g><g class='dg-pop' style='--d:0.9s'><path d='M177.2 62 A24 24 0 0 1 136.2 45' fill='none' stroke='#d97706' stroke-width='3'/><text dy='5' x='142.6' y='87.5' text-anchor='middle' font-size='16' fill='#d97706' font-weight='bold'>135°</text></g><g class='dg-pop' style='--d:1.2s'><text x='240' y='70' text-anchor='start' font-size='20' fill='#0f172a' font-weight='bold'>n = 8</text><text x='240' y='106' text-anchor='start' font-size='18' fill='#475569'>S = 6 × 180°</text><text x='240' y='142' text-anchor='start' font-size='18' fill='#475569'>= 1080°</text><text x='240' y='178' text-anchor='start' font-size='18' fill='#d97706' font-weight='bold'>α = 1080° ÷ 8</text><text x='240' y='214' text-anchor='start' font-size='20' fill='#d97706' font-weight='bold'>= 135°</text></g></svg></div>
+              <div class="visual-caption">ពហុកោណនិយ័ត ៨ ជ្រុង៖ មុំក្នុងមួយ = 135°</div>
+            </div>
+          </div>
             <div class="presenter-notes">
               <div class="notes-title">📝 កំណត់ត្រាពន្យល់លម្អិត (សម្រាប់គ្រូ និងសិស្សស្វ័យសិក្សា)</div>
               <div>នេះជាឧទាហរណ៍នៃការរកមុំក្នុងមួយនៃពហុកោណនិយ័ត។ វិធីសាស្ត្រនេះអាចប្រើបានសម្រាប់ពហុកោណនិយ័តគ្រប់ប្រភេទ។ ចម្លើយគឺ $135^\circ$។</div>
@@ -645,8 +662,8 @@
             </div>
             
             <div class="visual-card paper">
-              <div class="visual-svg-anim" style="width:100%;"><svg viewBox='0 0 420 260'><polygon points='210,30 330,80 330,180 210,230 90,180 90,80' fill='none' stroke='#38bdf8' stroke-width='3' class='dg-draw'/><text x='210' y='140' text-anchor='middle' font-size='16' fill='#333'>ពហុកោណ ១២ ជ្រុង</text><foreignObject x="0" y="149.7" width="420" height="30.8" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:14px;color:#666;"><div>$S = 1800^\circ$</div></div></foreignObject></svg></div>
-              <div class="visual-caption">ពហុកោណដែលមានផលបូកមុំក្នុង $1800^\circ$</div>
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ពហុកោណ ១២ ជ្រុង បំបែកជា ១០ ត្រីកោណ'><g class='dg-pop' style='--d:0s'><polygon points='125,38 171,50.3 204.7,84' fill='#bae6fd' fill-opacity='.8'/><polygon points='125,38 204.7,84 217,130' fill='#fde68a' fill-opacity='.8'/><polygon points='125,38 217,130 204.7,176' fill='#fbcfe8' fill-opacity='.8'/><polygon points='125,38 204.7,176 171,209.7' fill='#bbf7d0' fill-opacity='.8'/><polygon points='125,38 171,209.7 125,222' fill='#ddd6fe' fill-opacity='.8'/><polygon points='125,38 125,222 79,209.7' fill='#fed7aa' fill-opacity='.8'/><polygon points='125,38 79,209.7 45.3,176' fill='#bae6fd' fill-opacity='.8'/><polygon points='125,38 45.3,176 33,130' fill='#fde68a' fill-opacity='.8'/><polygon points='125,38 33,130 45.3,84' fill='#fbcfe8' fill-opacity='.8'/><polygon points='125,38 45.3,84 79,50.3' fill='#bbf7d0' fill-opacity='.8'/></g><polygon points='125,38 171,50.3 204.7,84 217,130 204.7,176 171,209.7 125,222 79,209.7 45.3,176 33,130 45.3,84 79,50.3' fill='none' stroke='#0f172a' stroke-width='3' stroke-linejoin='round' pathLength='1' class='dg-draw' style='--d:0.1s'/><g class='dg-pop' style='--d:0.7s'><line x1='125' y1='38' x2='204.7' y2='84' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='38' x2='217' y2='130' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='38' x2='204.7' y2='176' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='38' x2='171' y2='209.7' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='38' x2='125' y2='222' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='38' x2='79' y2='209.7' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='38' x2='45.3' y2='176' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='38' x2='33' y2='130' stroke='#d97706' stroke-width='2' stroke-linecap='round'/><line x1='125' y1='38' x2='45.3' y2='84' stroke='#d97706' stroke-width='2' stroke-linecap='round'/></g><g class='dg-pop' style='--d:1.0s'><text x='240' y='100' text-anchor='start' font-size='20' fill='#0f172a' font-weight='bold'>n = 12</text><text x='240' y='134' text-anchor='start' font-size='17' fill='#475569'>n − 2 = 10 ត្រីកោណ</text><text x='240' y='168' text-anchor='start' font-size='18' fill='#0f172a'>S = 10 × 180°</text><text x='240' y='202' text-anchor='start' font-size='22' fill='#d97706' font-weight='bold'>= 1800°</text></g></svg></div>
+              <div class="visual-caption">ពហុកោណ ១២ ជ្រុង (ទ្វាទសកោណ) ផលបូកមុំក្នុង 1800°</div>
             </div>
             
           </div>
@@ -958,6 +975,19 @@
       var span = document.createElement('span');
       span.innerHTML = node.nodeValue.replace(/ដំណោះស្រាយ៖/g, '<span class="solution-label">ដំណោះស្រាយ៖</span>');
       node.parentNode.replaceChild(span, node);
+    });
+
+    // 1b. ប្ដូរស្ទីល «អន្ទាក់ទី ...៖»
+    var w2 = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var tn = [];
+    while (w2.nextNode()) {
+      var pe = w2.currentNode.parentNode;
+      if (pe && !/^(SCRIPT|STYLE)$/.test(pe.tagName) && !pe.classList.contains('trap-label') && /អន្ទាក់ទី\s*[០-៩0-9]+\s*៖/.test(w2.currentNode.nodeValue)) tn.push(w2.currentNode);
+    }
+    tn.forEach(function(node){
+      var sp = document.createElement('span');
+      sp.innerHTML = node.nodeValue.replace(/អន្ទាក់ទី\s*[០-៩0-9]+\s*៖/g, '<span class="trap-label">$&</span>');
+      node.parentNode.replaceChild(sp, node);
     });
 
     // 2. ប្ដូរស្ទីល «បង្រៀនដោយ៖ លោកគ្រូ ផៃ ចន» ឱ្យច្បាស់ និងធំស្អាត

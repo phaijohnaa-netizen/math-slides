@@ -417,6 +417,11 @@
       .visual-svg-anim { animation: none !important; }
       .presenter-notes { display: block !important; background: #f8fafc !important; color: #0f172a !important; }
     }
+    /* phai-fontface */
+    @font-face { font-family: "Khmer OS Muol Light"; src: local("Khmer OS Muol Light"), url("../fonts/KhmerOSMuolLight.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Khmer OS Battambang"; src: local("Khmer OS Battambang"), url("../fonts/KhmerOSBattambang.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    .tip-title, .trap-label { font-family: "Khmer OS Muol Light", "Moul", serif !important; font-weight: normal !important; }
+    .trap-label { color: #d97706; }
     .solution-label {
       font-family: 'Khmer OS Muol Light', 'Moul', serif;
       font-size: 1.25em;
@@ -559,8 +564,8 @@
             </div>
             
             <div class="visual-card paper">
-              <div class="visual-svg-anim" style="width:100%;"><svg viewBox="0 0 420 260"><rect x="110" y="30" width="200" height="200" fill="none" stroke="#38bdf8" stroke-width="3" class="dg-draw"/><foreignObject class="dg-text" x="0" y="106" width="420" height="44" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:20px;color:var(--text);"><div>ផ្ទៃ $= x$² + 10x + 25</div></div></foreignObject><foreignObject class="dg-text" x="0" y="221" width="420" height="44" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:20px;color:var(--text);"><div>ប្រវែងជ្រុង $=$ ?</div></div></foreignObject></svg></div>
-              <div class="visual-caption">ការ៉េដែលមានផ្ទៃ $x^2 + 10x + 25$</div>
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='ការ៉េ x²+10x+25 មានជ្រុង x+5'><g class='dg-pop' style='--d:0.0s'><rect x='45' y='52' width='120' height='120' fill='#bae6fd' stroke='#fff' stroke-width='2'/><text x='105' y='119' text-anchor='middle' font-size='20' fill='#0f172a' font-weight='bold'>x²</text></g><g class='dg-pop' style='--d:0.15s'><rect x='165' y='52' width='60' height='120' fill='#fde68a' stroke='#fff' stroke-width='2'/><text x='195' y='119' text-anchor='middle' font-size='20' fill='#0f172a' font-weight='bold'>5x</text></g><g class='dg-pop' style='--d:0.15s'><rect x='45' y='172' width='120' height='60' fill='#fde68a' stroke='#fff' stroke-width='2'/><text x='105' y='209' text-anchor='middle' font-size='20' fill='#0f172a' font-weight='bold'>5x</text></g><g class='dg-pop' style='--d:0.3s'><rect x='165' y='172' width='60' height='60' fill='#fbcfe8' stroke='#fff' stroke-width='2'/><text x='195' y='209' text-anchor='middle' font-size='20' fill='#0f172a' font-weight='bold'>25</text></g><rect x='45' y='52' width='180' height='180' fill='none' stroke='#0f172a' stroke-width='3' pathLength='1' class='dg-draw' style='--d:.1s'/><g class='dg-pop' style='--d:0.7s'><text x='105' y='40' text-anchor='middle' font-size='18' fill='#0284c7' font-weight='bold'>x</text><text x='195' y='40' text-anchor='middle' font-size='18' fill='#0284c7' font-weight='bold'>5</text><text x='35' y='118' text-anchor='end' font-size='18' fill='#0284c7' font-weight='bold'>x</text><text x='35' y='208' text-anchor='end' font-size='18' fill='#0284c7' font-weight='bold'>5</text></g><g class='dg-pop' style='--d:1.2s'><text x='253' y='82' text-anchor='start' font-size='17' fill='#0f172a' font-weight='bold'>x² + 10x + 25</text><text x='253' y='116' text-anchor='start' font-size='20' fill='#d97706' font-weight='bold'>= (x + 5)²</text><text x='253' y='150' text-anchor='start' font-size='17' fill='#0284c7' font-weight='bold'>ជ្រុង = x + 5</text></g></svg></div>
+              <div class="visual-caption">ការ៉េដែលមានផ្ទៃ x² + 10x + 25</div>
             </div>
             
           </div>
@@ -708,8 +713,8 @@
             </div>
             
             <div class="visual-card paper">
-              <div class="visual-svg-anim" style="width:100%;"><svg viewBox='0 0 420 260'><rect x='50' y='40' width='320' height='180' rx='10' fill='#fee2e2' stroke='#ef4444' stroke-width='2'/><text x='210' y='80' font-size='20' text-anchor='middle' fill='#ef4444' font-weight='bold'>❌ កំហុសទូទៅ</text><foreignObject x="0" y="103.9" width="420" height="39.6" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:18px;color:var(--text);"><div>$x^2 + 9 \neq (x+3)^2$</div></div></foreignObject><foreignObject x="0" y="153.9" width="420" height="39.6" overflow="visible"><div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;white-space:nowrap;line-height:1.35;font-size:18px;color:var(--text);"><div>$(x+3)^2 = x^2 + 6x + 9$</div></div></foreignObject></svg></div>
-              <div class="visual-caption">ការប្រៀបធៀបរវាងកំហុស និងភាពត្រឹមត្រូវ</div>
+              <div class="visual-svg-anim" style="width:100%;"><svg data-g9diag='1' viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='(x+3)² មានតួ 6x'><g class='dg-pop' style='--d:0.0s'><rect x='45' y='52' width='110' height='110' fill='#bae6fd' stroke='#fff' stroke-width='2'/><text x='100' y='114' text-anchor='middle' font-size='20' fill='#0f172a' font-weight='bold'>x²</text></g><g class='dg-pop' style='--d:0.15s'><rect x='155' y='52' width='55' height='110' fill='#fde68a' stroke='#fff' stroke-width='2'/><text x='182.5' y='114' text-anchor='middle' font-size='20' fill='#0f172a' font-weight='bold'>3x</text></g><g class='dg-pop' style='--d:0.15s'><rect x='45' y='162' width='110' height='55' fill='#fde68a' stroke='#fff' stroke-width='2'/><text x='100' y='196.5' text-anchor='middle' font-size='20' fill='#0f172a' font-weight='bold'>3x</text></g><g class='dg-pop' style='--d:0.3s'><rect x='155' y='162' width='55' height='55' fill='#fbcfe8' stroke='#fff' stroke-width='2'/><text x='182.5' y='196.5' text-anchor='middle' font-size='20' fill='#0f172a' font-weight='bold'>9</text></g><rect x='45' y='52' width='165' height='165' fill='none' stroke='#0f172a' stroke-width='3' pathLength='1' class='dg-draw' style='--d:.1s'/><g class='dg-pop' style='--d:0.7s'><text x='100' y='40' text-anchor='middle' font-size='18' fill='#0284c7' font-weight='bold'>x</text><text x='182.5' y='40' text-anchor='middle' font-size='18' fill='#0284c7' font-weight='bold'>3</text><text x='35' y='113' text-anchor='end' font-size='18' fill='#0284c7' font-weight='bold'>x</text><text x='35' y='195.5' text-anchor='end' font-size='18' fill='#0284c7' font-weight='bold'>3</text></g><g class='dg-pop' style='--d:1.2s'><text x='238' y='82' text-anchor='start' font-size='19' fill='#0f172a' font-weight='bold'>(x + 3)²</text><text x='238' y='116' text-anchor='start' font-size='16' fill='#16a34a' font-weight='bold'>= x² + 6x + 9 ✓</text><text x='238' y='150' text-anchor='start' font-size='19' fill='#db2777' font-weight='bold'>x² + 9 ✗</text><text x='238' y='184' text-anchor='start' font-size='15' fill='#db2777'>ខ្វះ 3x + 3x</text></g></svg></div>
+              <div class="visual-caption">(x + 3)² ត្រូវមានតួ 6x</div>
             </div>
             
           </div>
@@ -992,6 +997,19 @@
       var span = document.createElement('span');
       span.innerHTML = node.nodeValue.replace(/ដំណោះស្រាយ៖/g, '<span class="solution-label">ដំណោះស្រាយ៖</span>');
       node.parentNode.replaceChild(span, node);
+    });
+
+    // 1b. ប្ដូរស្ទីល «អន្ទាក់ទី ...៖»
+    var w2 = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var tn = [];
+    while (w2.nextNode()) {
+      var pe = w2.currentNode.parentNode;
+      if (pe && !/^(SCRIPT|STYLE)$/.test(pe.tagName) && !pe.classList.contains('trap-label') && /អន្ទាក់ទី\s*[០-៩0-9]+\s*៖/.test(w2.currentNode.nodeValue)) tn.push(w2.currentNode);
+    }
+    tn.forEach(function(node){
+      var sp = document.createElement('span');
+      sp.innerHTML = node.nodeValue.replace(/អន្ទាក់ទី\s*[០-៩0-9]+\s*៖/g, '<span class="trap-label">$&</span>');
+      node.parentNode.replaceChild(sp, node);
     });
 
     // 2. ប្ដូរស្ទីល «បង្រៀនដោយ៖ លោកគ្រូ ផៃ ចន» ឱ្យច្បាស់ និងធំស្អាត

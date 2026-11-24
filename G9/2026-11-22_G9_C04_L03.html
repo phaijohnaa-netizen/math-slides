@@ -417,6 +417,11 @@
       .visual-svg-anim { animation: none !important; }
       .presenter-notes { display: block !important; background: #f8fafc !important; color: #0f172a !important; }
     }
+    /* phai-fontface */
+    @font-face { font-family: "Khmer OS Muol Light"; src: local("Khmer OS Muol Light"), url("../fonts/KhmerOSMuolLight.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Khmer OS Battambang"; src: local("Khmer OS Battambang"), url("../fonts/KhmerOSBattambang.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    .tip-title, .trap-label { font-family: "Khmer OS Muol Light", "Moul", serif !important; font-weight: normal !important; }
+    .trap-label { color: #d97706; }
     .solution-label {
       font-family: 'Khmer OS Muol Light', 'Moul', serif;
       font-size: 1.25em;
@@ -992,6 +997,19 @@
       var span = document.createElement('span');
       span.innerHTML = node.nodeValue.replace(/ដំណោះស្រាយ៖/g, '<span class="solution-label">ដំណោះស្រាយ៖</span>');
       node.parentNode.replaceChild(span, node);
+    });
+
+    // 1b. ប្ដូរស្ទីល «អន្ទាក់ទី ...៖»
+    var w2 = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var tn = [];
+    while (w2.nextNode()) {
+      var pe = w2.currentNode.parentNode;
+      if (pe && !/^(SCRIPT|STYLE)$/.test(pe.tagName) && !pe.classList.contains('trap-label') && /អន្ទាក់ទី\s*[០-៩0-9]+\s*៖/.test(w2.currentNode.nodeValue)) tn.push(w2.currentNode);
+    }
+    tn.forEach(function(node){
+      var sp = document.createElement('span');
+      sp.innerHTML = node.nodeValue.replace(/អន្ទាក់ទី\s*[០-៩0-9]+\s*៖/g, '<span class="trap-label">$&</span>');
+      node.parentNode.replaceChild(sp, node);
     });
 
     // 2. ប្ដូរស្ទីល «បង្រៀនដោយ៖ លោកគ្រូ ផៃ ចន» ឱ្យច្បាស់ និងធំស្អាត
