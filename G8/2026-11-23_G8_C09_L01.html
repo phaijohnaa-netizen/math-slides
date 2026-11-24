@@ -507,6 +507,13 @@
       color: #f59e0b !important;
     }
   </style>
+<style>
+    /* phai-fontface */
+    @font-face { font-family: "Khmer OS Muol Light"; src: local("Khmer OS Muol Light"), url("../fonts/KhmerOSMuolLight.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Khmer OS Battambang"; src: local("Khmer OS Battambang"), url("../fonts/KhmerOSBattambang.ttf") format("truetype"); font-weight: normal; font-style: normal; font-display: swap; }
+    .tip-title, .trap-label { font-family: "Khmer OS Muol Light", "Moul", serif !important; font-weight: normal !important; }
+    .trap-label { color: #d97706; }
+  </style>
 </head>
 <body>
   <header>
@@ -692,8 +699,8 @@
           </div>
           <div class="slide-body has-visual">
             <div class="steps">
-              <div class="step visible">អន្ទាក់ទី ១៖ ច្រឡំសរសេរ $(y, x)$ ជំនួសឱ្យ $(x, y)$។ ត្រូវចាំថា $x$ តែងតែនៅមុខជានិច្ច!</div>
-<div class="step">អន្ទាក់ទី ២៖ ច្រឡំសញ្ញាក្នុងកាដ្រង់។ ឧទាហរណ៍៖ $(-2, -3)$ ស្ថិតក្នុងកាដ្រង់ទី ៣ មិនមែនទី ២ ទេ។</div>
+              <div class="step visible"><span class="trap-label">អន្ទាក់ទី ១៖</span> ច្រឡំសរសេរ $(y, x)$ ជំនួសឱ្យ $(x, y)$។ ត្រូវចាំថា $x$ តែងតែនៅមុខជានិច្ច!</div>
+<div class="step"><span class="trap-label">អន្ទាក់ទី ២៖</span> ច្រឡំសញ្ញាក្នុងកាដ្រង់។ ឧទាហរណ៍៖ $(-2, -3)$ ស្ថិតក្នុងកាដ្រង់ទី ៣ មិនមែនទី ២ ទេ។</div>
 <div class="step">គន្លឹះ៖ គូរក្រាបតូចមួយនៅក្បែរ ដើម្បីផ្ទៀងផ្ទាត់សញ្ញា $+/-$ មុននឹងឆ្លើយ។</div>
 
             <div class="tip-box">
